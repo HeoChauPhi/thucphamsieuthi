@@ -99,6 +99,7 @@
           .woocommerce-loop-product__title {
             @include robotoCondensed;
             border-top: rem(1px) solid $color-line;
+            color: $black;
             font-size: rem(16px);
             margin-bottom: rem(10px);
             padding: rem(15px 10px 0 15px);
@@ -111,9 +112,28 @@
 
           .price {
             @include robotoCondensedBold;
-            font-size: rem(18px);
+            align-items: flex-end;
+            color: $color-link;
+            display: flex;
+            font-size: inherit;
+            justify-content: center;
             margin-bottom: rem(15px);
             padding: rem(0 10px);
+
+            del,
+            ins {
+              flex: 1;
+              opacity: 1;
+              text-align: center;
+            }
+
+            del {
+              color: lighten($color-base, 50%);
+            }
+
+            ins {
+              font-size: rem(18px);
+            }
           }
 
           .add_to_cart_button {
