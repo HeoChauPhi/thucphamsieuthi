@@ -1,0 +1,37 @@
+.archive-list {
+  .archive-post-item {
+    margin: rem(0 0 40px);
+
+    &:nth-of-type(4n+1) {
+      clear: both;
+    }
+  }
+
+  .archive-item-inner {
+    border: rem(1px) solid $color-line;
+    padding: rem(0 20px 25px 20px);
+
+    .post-content {
+    }
+
+    .post-picture {
+      border-bottom: rem(1px) solid $color-line;
+      margin: rem(0 -20px 20px -20px);
+    }
+
+    .post-title {
+      @include robotoCondensed;
+      font-size: rem(18px);
+      margin-bottom: rem(12px);
+    }
+
+    .post-excerpt {
+      margin-bottom: rem(20px);
+    }
+
+    .post-link-icon {
+      font-size: rem(10px);
+      line-height: rem(22px);
+    }
+  }
+}

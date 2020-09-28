@@ -1,0 +1,18 @@
+2020-09-11T19:14:07+00:00 CRITICAL Uncaught Error: Call to undefined function init() in /var/www/web/wp-content/plugins/ddv_store_system/init/functions.php:144
+Stack trace:
+#0 /var/www/web/wp/wp-includes/class-wp-hook.php(287): ddv_store_system_storesystemimport('')
+#1 /var/www/web/wp/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/web/wp/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/web/wp/wp-admin/admin-ajax.php(176): do_action('wp_ajax_storesy...')
+#4 {main}
+  thrown in /var/www/web/wp-content/plugins/ddv_store_system/init/functions.php on line 144
+
+2020-09-11T19:14:23+00:00 CRITICAL Uncaught Error: Call to undefined function init() in /var/www/web/wp-content/plugins/ddv_store_system/init/functions.php:144
+Stack trace:
+#0 /var/www/web/wp/wp-includes/class-wp-hook.php(287): ddv_store_system_storesystemimport('')
+#1 /var/www/web/wp/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/web/wp/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/web/wp/wp-admin/admin-ajax.php(176): do_action('wp_ajax_storesy...')
+#4 {main}
+  thrown in /var/www/web/wp-content/plugins/ddv_store_system/init/functions.php on line 144
+

@@ -1,0 +1,29 @@
+{% set menu_arr = menu.main.get_items %}
+{% set menu_first = menu_arr|slice(0, (menu_arr|length / 2)) %}
+{% set menu_last = menu_arr|slice(menu_arr|length / 2) %}
+
+<nav class="nav main-menu {% if menu_scroll %}menu-scroll{% endif %}">
+  <ul>
+    <li class="group-menu-items group-menu-items-left">
+      <ul>
+        {% for item in menu_first %}
+          {% include 'menu-item.twig' with {'item': item} %}
+        {% endfor %}
+      </ul>
+    </li>
+    <li class="group-menu-items group-menu-items-center header-logo logo-desktop">
+      <a href="{{ site.url }}" class="logo">
+        <img alt="{{ site.name }}" src="{{ site_logo }}" alt="{{ site.name }}">
+      </a>
+    </li>
+    <li class="group-menu-items group-menu-items-right">
+      <ul>
+        {% for item in menu_last %}
+          {% include 'menu-item.twig' with {'item': item} %}
+        {% endfor %}
+      </ul>
+    </li>
+  </ul>
+
+  <span class="js-close--menu"><i class="fas fa-times"></i></span>
+</nav>

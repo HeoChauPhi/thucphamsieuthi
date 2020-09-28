@@ -1,0 +1,20 @@
+<div class="block-banner-image {{ component_class }}">
+  <div class="{{ banner_image_options }}">
+    <div class="banner-image-inner" style="height: {{ banner_height }}px;">
+      {#<div class="parallax-window banner-parallax-window" data-parallax="scroll" data-image-src="{{ banner_image.url }}"></div>#}
+
+      <img class="paralax-image" src="{{ banner_image.url }}" alt="image">
+
+      <div class="banner-content">
+        <div class="container">
+          <h2 class="banner-title">{{ banner_title }}</h2>
+          <div class="banner-desc">{{ fn('nl2br', banner_description) }}</div>
+          <div class="banner-link"><a class="btn" href="{{ banner_link.url }}" {% if banner_link.target %}target="_blank"{% endif %}>{{ banner_link.title }}</a></div>
+        </div>
+      </div>
+      {% if banner_title or banner_description or banner_link %}
+      <div class="banner-overlay"></div>
+      {% endif %}
+    </div>
+  </div>
+</div>

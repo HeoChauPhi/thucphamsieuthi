@@ -1,0 +1,10 @@
+2020-08-29T03:21:39+00:00 CRITICAL Uncaught Twig\Error\RuntimeError: The merge filter only works with arrays or "Traversable", got "NULL" as second argument. in /var/www/web/wp-content/themes/custom_theme/templates/woo/tease-product.twig:40
+Stack trace:
+#0 /var/www/vendor/twig/twig/src/Environment.php(418) : eval()'d code(40): twig_array_merge(Array, NULL)
+#1 /var/www/vendor/twig/twig/src/Template.php(405): __TwigTemplate_c38094cc1df518953060d68cd84c8faf5cace25de94c6aedab4e6417bf63db6f->doDisplay(Array, Array)
+#2 /var/www/vendor/twig/twig/src/Template.php(378): Twig\Template->displayWithErrorHandling(Array, Array)
+#3 /var/www/vendor/twig/twig/src/Environment.php(418) : eval()'d code(75): Twig\Template->display(Array)
+#4 /var/www/vendor/twig/twig/src/Template.php(182): __TwigTemplate_fcff11d81e53e7e2dc61941a221c1a21334e6777ccd5f77beb224885f8cc9708->block_content(Array, Array)
+#5 /var/www/vendor/twig/twig/src/Environment.php(418) : eval()'d code(112): Twig\Template->displayBlock('content', Array, Array)
+#6 /var/www/vendor/twig/twig/src/Template. in /var/www/web/wp-content/themes/custom_theme/templates/woo/tease-product.twig on line 40
+

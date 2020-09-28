@@ -1,0 +1,14 @@
+{% if fn('is_page') or fn('is_home') or fn('is_shop') %}
+  {% if post.page_sub_title or post.page_excerpt %}
+  <div class="block-page-intro">
+    <div class="container">
+    {% if post.page_sub_title %}
+      <h2 class="sub-page-title">{{ post.page_sub_title }}</h2>
+    {% endif %}
+    {% if post.page_excerpt %}
+      <div class="page-excerpt">{{ fn('nl2br', post.page_excerpt) }}</div>
+    {% endif %}
+    </div>
+  </div>
+  {% endif %}
+{% endif %}

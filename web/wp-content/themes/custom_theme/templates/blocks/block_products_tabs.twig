@@ -1,0 +1,53 @@
+<div class="block-products-tabs {{ component_class }}">
+  <div class="container">
+    <div class="group-header">
+      <h2 class="block-title">{{ block_title }}</h2>
+      <div class="block-desc">{{ fn('nl2br', block_description) }}</div>
+    </div>
+
+    <div class="products-tab-content">
+      {% if product_tabs or product_category_tabs %}
+      <ul class="tabs-filter">
+        {% if product_tabs %}
+        {% for item in product_tabs %}
+          <li class="tab-item"><a href="#{{ item.value }}">{{ __(item.label, 'custom_theme') }}</a></li>
+        {% endfor %}
+        {% endif %}
+
+        {% if product_category_tabs %}
+        {% for term in product_category_tabs %}
+          <li class="tab-item"><a href="#products-by-{{ term.slug }}-cat">{{ __(term.name, 'custom_theme') }}</a></li>
+        {% endfor %}
+        {% endif %}
+      </ul>
+      {% endif %}
+
+      <div class="products-list">
+        <div id="sale_products" class="tab-content sale-products-list">
+          {#<h3>Sale Products</h3>#}
+          {{ fn('shortcode', '[sale_products limit="' ~ show_products ~ '" columns="5"]') }}
+        </div>
+        <div id="hot_products" class="tab-content hot-products-list">
+          {#<h3>Hot Products</h3>#}
+          {{ fn('shortcode', '[best_selling_products limit="' ~ show_products ~ '" columns="5"]') }}
+        </div>
+        <div id="new_products" class="tab-content new-products-list">
+          {#<h3>New Products</h3>#}
+          {{ fn('shortcode', '[products limit="' ~ show_products ~ '" columns="5" visibility="visible"]') }}
+        </div>
+        {% if product_category_tabs %}
+        {% for term in product_category_tabs %}
+          <div id="products-by-{{ term.slug }}-cat" class="tab-content {{ term.slug }}-products-list">
+            {#<h3>{{ term.name }}</h3>#}
+            {{ fn('shortcode', '[products limit="' ~ show_products ~ '" columns="5" category="' ~ term.slug ~ '" cat_operator="AND"]') }}
+          </div>
+        {% endfor %}
+        {% endif %}
+      </div>
+    </div>
+
+    <div class="block-link">
+      <a class="btn" href="{{ block_link.url }}" {% if block_link.target %}target="_blank"{% endif %}>{{ block_link.title }}</a>
+    </div>
+  </div>
+</div>

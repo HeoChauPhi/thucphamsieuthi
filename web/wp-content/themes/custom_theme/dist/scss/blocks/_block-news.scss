@@ -1,0 +1,24 @@
+.block-news {
+  padding: rem(22px 0 30px);
+
+  .news-slide {
+    display: none;
+    overflow: hidden;
+
+    &.slick-slider {
+      display: block;
+    }
+
+    .slick-list {
+      margin-left: rem(-10px);
+      margin-right: rem(-10px);
+    }
+
+    &.archive-list {
+      .slide-item {
+        clear: none;
+        margin: rem(0 10px 40px 10px);
+      }
+    }
+  }
+}

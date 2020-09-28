@@ -1,0 +1,17 @@
+<div class="block-hot-news {{ component_class }}">
+  <h2 class="block-title">{{ block_title }}</h2>
+  <div class="block-inner">
+    <div class="hot-news-list row">
+      {% for post in posts_result %}
+        <div class="hot-news-item col-md-6">
+          {% if post.thumbnail %}
+          <div class="post-picture">
+            <a href="{{ post.link }}"><img src="{{ post.thumbnail.src|resize(600, 366) }}" class="feature" /></a>
+          </div>
+          {% endif %}
+          <h3 class="post-title"><a href="{{ post.link }}">{{ post.title }}</a></h3>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>

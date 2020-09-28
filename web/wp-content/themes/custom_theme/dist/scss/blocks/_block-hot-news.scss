@@ -1,0 +1,32 @@
+.block-hot-news {
+  margin-bottom: rem(85px);
+
+  .block-title {
+    @include robotoCondensedBold;
+    color: $color-link;
+    font-size: rem(30px);
+    margin-bottom: rem(35px);
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  .hot-news-item {
+    .post-picture {
+      margin-bottom: rem(25px);
+      text-align: center;
+    }
+
+    .post-title {
+      @include robotoCondensed;
+      font-size: rem(30px);
+
+      a {
+        color: $black;
+
+        &:hover {
+          color: $color-link-hover;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,27 @@
+.block-image-text {
+  margin-bottom: rem(100px);
+
+  .text-image {
+    @include breakpoint(colmd) {
+      .block-text {
+        order: 1;
+      }
+      .block-image {
+        order: 2;
+      }
+    }
+  }
+
+  .block-image {
+    margin-bottom: rem(20px);
+
+    @include breakpoint(colmd) {
+      margin-bottom: 0;
+    }
+  }
+
+  .block-title {
+    font-size: rem(30px);
+    margin-bottom: rem(30px);
+  }
+}

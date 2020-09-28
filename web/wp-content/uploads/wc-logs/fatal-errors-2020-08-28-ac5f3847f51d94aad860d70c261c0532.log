@@ -1,0 +1,37 @@
+2020-08-28T08:46:12+00:00 CRITICAL Uncaught ArgumentCountError: Too few arguments to function ct_change_reviews_heading(), 1 passed in /var/www/web/wp/wp-includes/class-wp-hook.php on line 289 and exactly 3 expected in /var/www/web/wp-content/themes/custom_theme/functions.php:204
+Stack trace:
+#0 /var/www/web/wp/wp-includes/class-wp-hook.php(289): ct_change_reviews_heading('1 review for <s...')
+#1 /var/www/web/wp/wp-includes/plugin.php(206): WP_Hook->apply_filters('1 review for <s...', Array)
+#2 /var/www/web/wp-content/plugins/woocommerce/templates/single-product-reviews.php(35): apply_filters('woocommerce_rev...', '1 review for <s...', 1, Object(WC_Product_Simple))
+#3 /var/www/web/wp/wp-includes/comment-template.php(1539): require('/var/www/web/wp...')
+#4 [internal function]: comments_template()
+#5 /var/www/vendor/timber/timber/lib/Twig.php(296): call_user_func_array('comments_templa...', Array)
+#6 /var/www/vendor/twig/twig/src/Environment.php(418) : eval()'d code(109): Timber\Twig->exec_function('comments_templa...')
+#7 /var/www/vendor/twig/t in /var/www/web/wp-content/themes/custom_theme/functions.php on line 204
+
+2020-08-28T08:46:25+00:00 CRITICAL Uncaught ArgumentCountError: Too few arguments to function ct_change_reviews_heading(), 1 passed in /var/www/web/wp/wp-includes/class-wp-hook.php on line 289 and exactly 3 expected in /var/www/web/wp-content/themes/custom_theme/functions.php:204
+Stack trace:
+#0 /var/www/web/wp/wp-includes/class-wp-hook.php(289): ct_change_reviews_heading('1 review for <s...')
+#1 /var/www/web/wp/wp-includes/plugin.php(206): WP_Hook->apply_filters('1 review for <s...', Array)
+#2 /var/www/web/wp-content/plugins/woocommerce/templates/single-product-reviews.php(35): apply_filters('woocommerce_rev...', '1 review for <s...', 1, Object(WC_Product_Simple))
+#3 /var/www/web/wp/wp-includes/comment-template.php(1539): require('/var/www/web/wp...')
+#4 [internal function]: comments_template()
+#5 /var/www/vendor/timber/timber/lib/Twig.php(296): call_user_func_array('comments_templa...', Array)
+#6 /var/www/vendor/twig/twig/src/Environment.php(418) : eval()'d code(109): Timber\Twig->exec_function('comments_templa...')
+#7 /var/www/vendor/twig/t in /var/www/web/wp-content/themes/custom_theme/functions.php on line 204
+
+2020-08-28T08:46:28+00:00 CRITICAL Uncaught ArgumentCountError: Too few arguments to function ct_change_reviews_heading(), 1 passed in /var/www/web/wp/wp-includes/class-wp-hook.php on line 289 and exactly 3 expected in /var/www/web/wp-content/themes/custom_theme/functions.php:204
+Stack trace:
+#0 /var/www/web/wp/wp-includes/class-wp-hook.php(289): ct_change_reviews_heading('1 review for <s...')
+#1 /var/www/web/wp/wp-includes/plugin.php(206): WP_Hook->apply_filters('1 review for <s...', Array)
+#2 /var/www/web/wp-content/plugins/woocommerce/templates/single-product-reviews.php(35): apply_filters('woocommerce_rev...', '1 review for <s...', 1, Object(WC_Product_Simple))
+#3 /var/www/web/wp/wp-includes/comment-template.php(1539): require('/var/www/web/wp...')
+#4 [internal function]: comments_template()
+#5 /var/www/vendor/timber/timber/lib/Twig.php(296): call_user_func_array('comments_templa...', Array)
+#6 /var/www/vendor/twig/twig/src/Environment.php(418) : eval()'d code(109): Timber\Twig->exec_function('comments_templa...')
+#7 /var/www/vendor/twig/t in /var/www/web/wp-content/themes/custom_theme/functions.php on line 204
+
+2020-08-28T11:12:16+00:00 CRITICAL syntax error, unexpected ',' in /var/www/web/wp-content/themes/custom_theme/functions.php on line 205
+
+2020-08-28T11:12:16+00:00 CRITICAL syntax error, unexpected ',' in /var/www/web/wp-content/themes/custom_theme/functions.php on line 205
+

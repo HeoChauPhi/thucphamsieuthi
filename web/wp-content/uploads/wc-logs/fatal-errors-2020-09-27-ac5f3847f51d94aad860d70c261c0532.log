@@ -1,0 +1,12 @@
+2020-09-27T07:37:54+00:00 CRITICAL Uncaught ArgumentCountError: Too few arguments to function wc_format_dimensions(), 0 passed and exactly 1 expected in /var/www/web/wp-content/plugins/woocommerce/includes/wc-formatting-functions.php:1273
+Stack trace:
+#0 [internal function]: wc_format_dimensions()
+#1 /var/www/vendor/timber/timber/lib/Twig.php(296): call_user_func_array('wc_format_dimen...', Array)
+#2 /var/www/vendor/twig/twig/src/Environment.php(418) : eval()'d code(101): Timber\Twig->exec_function('wc_format_dimen...')
+#3 /var/www/vendor/twig/twig/src/Template.php(182): __TwigTemplate_8d38daef73def47490971beb1ef8497a029e847062e6a17ebaa97f33037bee32->block_content(Array, Array)
+#4 /var/www/vendor/twig/twig/src/Environment.php(418) : eval()'d code(129): Twig\Template->displayBlock('content', Array, Array)
+#5 /var/www/vendor/twig/twig/src/Template.php(405): __TwigTemplate_2e5145ff014a215e4f207198d6db7542a3d45d0477b2e26a9f11e8043bcfa995->doDisplay(Array, Array)
+#6 /var/www/vendor/twig/twig/src/Template.php(378): Twig\Template->displayWithErrorHan in /var/www/web/wp-content/plugins/woocommerce/includes/wc-formatting-functions.php on line 1273
+
+2020-09-27T08:35:17+00:00 CRITICAL Cannot use isset() on the result of an expression (you can use "null !== expression" instead) in /var/www/web/wp-content/themes/custom_theme/page.php on line 31
+

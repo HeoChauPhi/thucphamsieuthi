@@ -1,0 +1,77 @@
+/**
+ * Default Variables.
+ *
+ * Modify this file to provide default Bootstrap Framework variables. The
+ * Bootstrap Framework will not override any variables defined here because it
+ * uses the `!default` flag which will only set their default if not already
+ * defined here.
+ *
+ * You can copy existing variables directly from the following file:
+ * ./THEMENAME/bootstrap/assets/stylesheets/bootstrap/_variables.scss
+ */
+
+// Device.
+$desktop: 1024px;
+$table: 768px;
+$mobile: 480px;
+
+// Set the proper directory for the Bootstrap Glyphicon font.
+$icon-font-path: '../bootstrap/assets/fonts/bootstrap/';
+$container: 1270px !default;
+$container-large-desktop: 1170px !default;
+$page-container-small: 720px;
+
+// Fonts.
+@mixin robotoCondensed {
+  font-family: 'Roboto Condensed', sans-serif;
+  font-weight: 400;
+}
+
+@mixin robotoCondensedItalic {
+  font-family: 'Roboto Condensed', sans-serif;
+  font-style: italic;
+  font-weight: 400;
+}
+
+@mixin robotoCondensedBold {
+  font-family: 'Roboto Condensed', sans-serif;
+  font-weight: 700;
+}
+
+$base-font-size: 15px;
+
+// Color.
+$red: #c1141f;
+$red-dark: #f72936;
+$yellow: #ffff00;
+$ping: #ff6868;
+$black: #000000;
+$white: #ffffff;
+
+$color-primary: $red;
+$color-second: $red-dark;
+
+$gray-99: #999999;
+$gray-34: #343434;
+$gray-ee: #eeeeee;
+$gray-35: #353c48;
+$gray-cb: #cbcbcb;
+$gray-cc: #cccccc;
+
+// Text color
+$color-base: $black;
+$color-link: $color-second;
+$color-link-hover: $yellow;
+$color-title: $color-primary;
+$color-label: $gray-34;
+
+// bg color
+$bg-form-field: $gray-ee;
+$bg-social: $gray-35;
+$bg-social-hover: $ping;
+$bg-social-detail: $gray-cb;
+$bg-social-detail-hover: $ping;
+$color-line: $gray-99;
+$color-line-footer: $gray-cc;
+$bg-header: $color-primary;
+$bg-footer: $ping;

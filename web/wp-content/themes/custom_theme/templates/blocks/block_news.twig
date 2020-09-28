@@ -1,0 +1,16 @@
+<div class="block-news {{ component_class }}">
+  <div class="container">
+    <div class="group-header">
+      <h2 class="block-title">{{ block_title }}</h2>
+      <div class="block-desc">{{ fn('nl2br', block_description) }}</div>
+    </div>
+    <div class="news-slide archive-list">
+      {% for post in posts_result %}
+        {% include 'archive-tease.twig' with {block_slide: 1} %}
+      {% endfor %}
+    </div>
+    <div class="block-link">
+      <a class="btn" href="{{ block_link.url }}" {% if block_link.target %}target="_blank"{% endif %}>{{ block_link.title }}</a>
+    </div>
+  </div>
+</div>

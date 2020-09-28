@@ -1,0 +1,80 @@
+.header-wrapper {
+  color: $white;
+  position: relative;
+
+  .header-top {
+    background-color: $bg-header;
+    font-size: rem(14px);
+    padding: rem(10px 0);
+
+    &-inner {
+      align-items: center;
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  .header-nav {
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#000000+0,000000+100&0.9+0,0.65+60,0+100 */
+    background: -moz-linear-gradient(top,  rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.65) 60%, rgba(0,0,0,0) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  rgba(0,0,0,0.9) 0%,rgba(0,0,0,0.65) 60%,rgba(0,0,0,0) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  rgba(0,0,0,0.9) 0%,rgba(0,0,0,0.65) 60%,rgba(0,0,0,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e6000000', endColorstr='#00000000',GradientType=0 ); /* IE6-9 */
+    left: 0;
+    padding-top: rem(20px);
+    position: absolute;
+    right: 0;
+    top: 100%;
+    z-index: 999;
+  }
+
+  .header-nav-inner {
+    align-items: center;
+    position: relative;
+  }
+
+  a {
+    color: $white;
+
+    &:hover {
+      color: $color-link-hover;
+    }
+  }
+
+  .header-logo {
+    &.logo-mobile {
+      text-align: center;
+
+      @include breakpoint(colmd) {
+        display: none !important;
+      }
+    }
+
+    &.logo-desktop {
+      @include breakpoint(colmdDown) {
+        display: none !important;
+      }
+    }
+  }
+
+  .logo {
+    display: block;
+    margin: 0 auto;
+    width: rem(189px);
+
+    @include breakpoint(colmd) {
+      margin: 0;
+    }
+  }
+}
+
+.block-mobile-info {
+  p {
+    margin-bottom: 0;
+  }
+
+  a {
+    @include robotoCondensedBold;
+    font-size: rem(18px);
+  }
+}

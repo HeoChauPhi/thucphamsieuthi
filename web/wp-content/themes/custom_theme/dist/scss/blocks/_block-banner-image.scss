@@ -1,0 +1,65 @@
+.block-banner-image {
+  margin-bottom: rem(23px);
+
+  .banner-image-inner {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+
+  }
+
+  .banner-parallax-window {
+    height: 100%;
+    width: 100%;
+  }
+
+  .banner-content {
+    color: $white;
+    text-align: center;
+  }
+
+  .banner-title {
+    @include robotoCondensedBold;
+    font-size: rem(30px);
+    margin-bottom: rem(40px);
+    text-transform: uppercase;
+  }
+
+  .banner-desc {
+    @include robotoCondensedItalic;
+    font-size: rem(18px);
+    margin-bottom: rem(35px);
+  }
+
+  .banner-link {
+    text-align: center;
+
+    > a {
+      @include robotoCondensed;
+      background-color: $white;
+      border-radius: rem(500px);
+      color: $color-link;
+      display: inline-block;
+      font-size: rem(18px);
+      padding: rem(7px 50px);
+
+      &:hover {
+        background-color: $color-link;
+        color: $color-link-hover;
+      }
+    }
+  }
+
+  .banner-overlay {
+    background: #000;
+    bottom: 0;
+    left: 0;
+    opacity: 0.6;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: -1;
+  }
+}
