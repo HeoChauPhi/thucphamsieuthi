@@ -34,7 +34,11 @@
       color: $white;
       margin: 0;
       padding: rem(7px 53px 7px 20px);
-      width: rem(400px);
+      width: rem(200px);
+
+      @include breakpoint(tablet) {
+        width: rem(400px);
+      }
 
       &:active,
       &:hover,

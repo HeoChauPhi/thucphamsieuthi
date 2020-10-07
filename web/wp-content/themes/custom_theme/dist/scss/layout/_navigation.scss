@@ -36,9 +36,30 @@
 
 /* Main Menu */
 .block-navigation {
-  .js-toogle--menu,
+  .js-toogle--menu {
+    position: absolute !important;
+    top: 50%;
+    transform: translateY(-50%) !important;
+    z-index: 9;
+
+    @include breakpoint(colmd) {
+      display: none !important;
+    }
+  }
+
   .js-close--menu {
-    display: none;
+    color: $color-link-hover;
+    cursor: pointer;
+    font-size: rem(40px);
+    font-weight: 400;
+    line-height: 0;
+    position: absolute;
+    right: rem(15px);
+    top: rem(15px);
+
+    @include breakpoint(colmd) {
+      display: none !important;
+    }
   }
 
   .main-menu {
@@ -65,20 +86,79 @@
       }
     }
 
-    // Menu list lvl 1
-    > ul {
-      align-items: center;
-      display: flex;
-      justify-content: space-between;
-      width: 100%;
-    }
-
     // Default Sub menu
     ul.nav-drop {
       //display: none;
     }
 
+    @include breakpoint(colmdDown) {
+      background-color: $bg-header;
+      height: 100vh;
+      left: 0;
+      max-width: 100%;
+      padding: rem(60px 15px 20px);
+      position: fixed;
+      top: 0;
+      transform: translateX(-100%);
+      transition: transform .5s ease-in-out;
+      width: 300px;
+      z-index: 10;
+
+      &.menu-show {
+        transform: translateX(0);
+      }
+
+      // Menu lvl 1
+      > ul {
+        width: 100%;
+      }
+
+      .group-menu-items {
+        > ul {
+          > li {
+            border-bottom: rem(1px) solid $color-link-hover;
+
+            > a {
+              display: block;
+              padding: rem(10px 0);
+            }
+
+            &.pll-parent-menu-item {
+              align-items: center;
+              display: flex;
+              justify-content: flex-start;
+
+              > a.nav-main-link {
+                margin-right: rem(20px);
+              }
+
+              .expanded-menu__menu-child {
+                display: block !important;
+              }
+            }
+          }
+        }
+      }
+
+      .expanded-menu__menu-child {
+        display: none !important;
+      }
+    }
+
     @include breakpoint(colmd) {
+      .js-toogle--menu,
+      .js-close--menu {
+        display: none !important;
+      }
+
+      // Menu list lvl 1
+      > ul {
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+      }
+
       // Menu group
       .group-menu-items-left,
       .group-menu-items-right {
@@ -91,6 +171,8 @@
           justify-content: space-between;
 
           > li {
+            padding: rem(0 5px);
+
             &:hover {
               > .expanded-menu__menu-child {
                 opacity: 1;
@@ -120,7 +202,6 @@
 
       // Su menu item lvl1
       .expanded-menu__menu-child {
-        background-color: rgba($black, 0.6);
         left: 0;
         opacity: 0;
         padding-top: rem(10px);
@@ -132,6 +213,7 @@
         z-index: -999;
 
         li {
+          background-color: rgba($black, 0.6);
           border-top: rem(1px) solid $color-link-hover;
 
           &.current-menu-parent,

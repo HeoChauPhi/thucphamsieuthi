@@ -222,8 +222,8 @@
     //console.log(PythagorasEquirectangular(20.999591499999998, 105.8404626, 21.6074228, 105.8395769));
 
     // Call to function
-    //$('.js-toogle--menu').on('click', mobileMenu);
-    //$('.js-close--menu').on('click', mobileMenuClose);
+    $('.js-toogle--menu').on('click', mobileMenu);
+    $('.js-close--menu').on('click', mobileMenuClose);
     //$('.js-back-top').on('click', backToTop);
     $('.js-scroll-down').on('click', scrollDown);
 
@@ -243,7 +243,7 @@
           }
         },
         {
-          breakpoint: 600,
+          breakpoint: 768,
           settings: {
             slidesToShow: 2,
           }

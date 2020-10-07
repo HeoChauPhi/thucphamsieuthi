@@ -48,6 +48,10 @@
       @include breakpoint(colmd) {
         display: none !important;
       }
+
+      .logo {
+        width: rem(120px);
+      }
     }
 
     &.logo-desktop {

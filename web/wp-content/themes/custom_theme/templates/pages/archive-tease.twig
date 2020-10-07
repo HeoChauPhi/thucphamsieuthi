@@ -23,7 +23,7 @@
 
 {% else %}
 
-  <article class="{% if block_slide %}slide-item{% else %}col-md-3{% endif %} post archive-{{ post.post_type }}-item" data-post-id="{{ post.ID }}">
+  <article class="{% if block_slide %}slide-item{% else %}col-sm-6 col-md-4 col-lg-3{% endif %} post archive-{{ post.post_type }}-item" data-post-id="{{ post.ID }}">
     <div class="archive-item-inner">
       {% if post.thumbnail %}
       <div class="post-picture">

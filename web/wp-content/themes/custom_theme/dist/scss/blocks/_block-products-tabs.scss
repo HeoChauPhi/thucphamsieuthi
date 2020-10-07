@@ -10,6 +10,7 @@
     align-items: center;
     border-radius: rem(5px);
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     list-style: none;
     margin: rem(0 0 40px);
@@ -17,7 +18,8 @@
     padding: 0;
 
     .tab-item {
-      flex: 1;
+      flex: 1 auto;
+      margin-bottom: rem(5px);
 
       > a {
         @include robotoCondensedBold;
@@ -60,13 +62,32 @@
 
     .woocommerce {
       ul.products{
+        display: flex;
+        flex-wrap: wrap;
+        margin: rem(0 -10px);
+
+        @include breakpoint(tablet) {
+          margin: rem(0 -20px);
+        }
+
         li.product {
           border: rem(1px) solid $color-line;
-          margin: rem(0 40px 40px 0);
-          width: calc(calc(100% - 160px)/5);
+          clear: none;
+          float: none;
+          margin: rem(0 10px 20px 10px);
+          width: calc(calc(100% - 40px)/2);
 
-          &.last {
-            margin-right: 0;
+          @include breakpoint(tablet) {
+            margin: rem(0 20px 40px 20px);
+            width: calc(calc(100% - 120px)/3);
+          }
+
+          @include breakpoint(colmd) {
+            width: calc(calc(100% - 160px)/4);
+          }
+
+          @include breakpoint(1200px) {
+            width: calc(calc(100% - 200px)/5);
           }
 
           a.woocommerce-loop-product__link {
