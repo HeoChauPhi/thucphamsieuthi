@@ -220,8 +220,15 @@ function flexible_content($name) {
   $fc_type = array();
 
   global $post;
-  $fc = get_field( $name, $post->ID );
-  $fc_ob = get_field_object( $name, $post->ID );
+
+  $post_id = $post->ID;
+
+  if ( !is_front_page() && is_home() ) {
+    $post_id = get_option('page_for_posts');
+  }
+  
+  $fc = get_field( $name, $post_id);
+  $fc_ob = get_field_object( $name, $post_id);
 
   if ( !empty( $fc ) ) {
     foreach ($fc as $key => $field) {

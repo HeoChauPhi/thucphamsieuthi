@@ -13095,6 +13095,12 @@ main {
   text-align: center;
   text-transform: uppercase;
 }
+.block-hot-news .hot-news-list .slick-prev {
+  left: 1rem;
+}
+.block-hot-news .hot-news-list .slick-next {
+  right: 1rem;
+}
 .block-hot-news .hot-news-item .post-picture {
   margin-bottom: 1.6666666667rem;
   text-align: center;
@@ -13551,6 +13557,9 @@ main {
 }
 .single-product-details .entry-images-inner .images .wpgis-slider-nav .slick-slide img {
   height: auto;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
   width: 100%;
 }
 .single-product-details .entry-images-inner .images .wpgis-slider-nav .slick-slide.slick-current {

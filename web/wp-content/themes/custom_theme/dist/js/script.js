@@ -260,6 +260,25 @@
       ]
     });
 
+    $('.hot-news-list').slick({
+      autoplay: true,
+      autoplaySpeed: 3000,
+      infinite: true,
+      speed: 300,
+      slidesToShow: 2,
+      responsive: [
+        {
+          breakpoint: 768,
+          settings: {
+            slidesToShow: 1,
+          }
+        }
+        // You can unslick at a given breakpoint now by adding:
+        // settings: "unslick"
+        // instead of a settings object
+      ]
+    });
+
     $('.product-cat-filter .filter-list').slick({
       arrows: true,
       slidesToShow: 1,
@@ -272,7 +291,8 @@
     });
 
     $('.news-slide .slide-item .archive-item-inner').matchHeight({property: 'min-height'});
-    $('.blog-posts .archive-list .archive-item-inner').matchHeight({property: 'min-height'});
+    $('.blog-posts .archive-list .archive-item-inner .post-title').matchHeight({property: 'min-height'});
+    $('.blog-posts .archive-list .archive-item-inner .post-excerpt').matchHeight({property: 'min-height'});
     $('.block-products-tabs .tab-content').each(function( index ) {
       $(this).find('li.product a.woocommerce-loop-product__link').matchHeight({property: 'min-height'});
     });
