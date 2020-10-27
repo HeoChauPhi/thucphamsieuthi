@@ -29,9 +29,11 @@
         {% endblock %}
         
         <div class="main-wrapper">
-          {% if fn('is_front_page') is empty %}
-          {% include 'breadcrumb.twig' %}
-          {% endif %}
+          {% block breadcrumb %}
+            {% if fn('is_front_page') is empty %}
+            {% include 'breadcrumb.twig' %}
+            {% endif %}
+          {% endblock %}
 
           {% block page_intro %}
           {% include 'page-intro.twig' %}

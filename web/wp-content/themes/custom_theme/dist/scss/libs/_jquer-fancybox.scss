@@ -893,3 +893,10 @@ body.compensate-for-scrollbar {
     max-width: calc(100% - 10px);
   }
 }
+
+.fancybox-close-small {
+  color: #fff !important;
+  position: fixed;
+  right: 0;
+  top: 0;
+}

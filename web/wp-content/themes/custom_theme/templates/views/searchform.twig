@@ -1,7 +1,17 @@
 {% block searchform %}
   <div class="block-search">
     <form class="searchform" role="search" method="get" id="searchform" action="{{site.url}}/">
-      <input class="form-text" type="text" value="{{function('get_search_query')}}" name="s" id="s" placeholder="{{ __('Search', 'custom_theme')}}">
+      <input class="form-text" type="text" value="{{ fn('get_search_query') }}" name="s" id="s" placeholder="{{ __('Search', 'custom_theme')}}">
+      {% if fn('class_exists', 'WooCommerce') %}
+        <div class="form-search-by-posttype">
+          <select name="post_type" class="form-select">
+            <option value="any" {% if search_value == 'any' %}selected{% endif %}>{{ __('All', 'custom_theme') }}</option>
+            <option value="post" {% if search_value == 'post' %}selected{% endif %}>{{ __('News', 'custom_theme') }}</option>
+            <option value="product" {% if search_value == 'product' %}selected{% endif %}>{{ __('Products', 'custom_theme') }}</option>
+          </select>
+        </div>
+      {% endif %}
+
       <button type="submit" id="searchsubmit" value="Search" class="button postfix">{{ __('Search', 'custom_theme')}}</button>
     </form>
   </div>

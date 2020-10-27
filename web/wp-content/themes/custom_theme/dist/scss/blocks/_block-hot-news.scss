@@ -29,6 +29,7 @@
     .post-title {
       @include robotoCondensed;
       font-size: rem(30px);
+      text-align: center;
 
       a {
         color: $black;

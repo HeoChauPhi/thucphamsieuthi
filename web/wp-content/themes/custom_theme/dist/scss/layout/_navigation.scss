@@ -62,6 +62,38 @@
     }
   }
 
+  .cart-icon {
+    /* > a {
+      @extend .fas;
+      font-size: rem(20px);
+      position: relative;
+      text-indent: -999rem;
+
+      &:before {
+        @extend .fa-shopping-cart;
+        float: left;
+        text-indent: 0;
+      }
+    } */
+
+    > a {
+      position: relative;
+    }
+
+    .cart-count {
+      color: $color-link-hover;
+      position: absolute;
+      right: rem(-12px);
+      text-indent: 0;
+      top: rem(-12px);
+      z-index: 1;
+      font-size: rem(12px);
+      background-color: $color-link;
+      padding: rem(0 5px);
+      border-radius: rem(5px);
+    }
+  }
+
   .main-menu {
     @include robotoCondensedBold;
     font-size: rem(16px);

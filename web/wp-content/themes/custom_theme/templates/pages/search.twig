@@ -1,5 +1,33 @@
 {% extends 'layout.twig' %}
 
+{% block feature %}
+  <div id="feature" class="feature-wrapper">
+    <div class="feature-media"></div>
+
+    <div class="container">
+      <div class="group-title">
+        <h1 id="page-title">{{ __('Search','custom_theme') }}</h1>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+{% block breadcrumb %}
+<nav aria-label="breadcrumb" class="breadcrumb-wrapper animation-element" data-animate="fadeIn">
+  <div class="container">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item">
+        <a href="{{ site.url }}">{{ __('home', 'custom_theme') }}</a>
+      </li>
+
+      <li class="breadcrumb-item active" aria-current="page">
+        {{ fn('get_search_query') }}
+      </li>
+    </ol>
+</div>
+</nav>
+{% endblock %}
+
 {% block content %}
 <div class="container">
   <div class="main-content-inner">

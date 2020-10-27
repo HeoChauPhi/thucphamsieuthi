@@ -16,6 +16,10 @@ if ( is_singular( 'product' ) ) {
   wp_reset_postdata();
 
   Timber::render( 'templates/woo/single-product.twig', $context );
+} elseif ( is_search() ) {
+  $context['search_value'] = $_REQUEST['post_type'];
+  
+  Timber::render( 'search.twig', $context );
 } else {
   $page = new TimberPost(get_option( 'woocommerce_shop_page_id' ));
   $posts = Timber::get_posts();

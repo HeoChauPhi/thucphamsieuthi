@@ -119,7 +119,6 @@
 
           .woocommerce-loop-product__title {
             @include robotoCondensed;
-            border-top: rem(1px) solid $color-line;
             color: $black;
             font-size: rem(16px);
             margin-bottom: rem(10px);
