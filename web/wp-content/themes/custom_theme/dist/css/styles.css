@@ -12701,7 +12701,7 @@ button:hover {
 }
 .block-pager.pager-unvisible .btn-ajax,
 .woocommerce nav.woocommerce-pagination.pager-unvisible .btn-ajax {
-  background-color: #999999;
+  background-color: #999999 !important;
   cursor: not-allowed;
   pointer-events: none;
 }
@@ -14026,6 +14026,12 @@ main {
   font-weight: 400;
   font-size: 1.2rem;
   margin-bottom: 0.8rem;
+}
+.archive-list .archive-item-inner .post-title a {
+  color: #000000;
+}
+.archive-list .archive-item-inner .post-title a:hover {
+  color: #f72936;
 }
 .archive-list .archive-item-inner .post-excerpt {
   margin-bottom: 1.3333333333rem;

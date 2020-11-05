@@ -339,7 +339,7 @@
 
   &.pager-unvisible {
     .btn-ajax {
-      background-color: $color-line;
+      background-color: $color-line !important;
       cursor: not-allowed;
       pointer-events: none;
     }
