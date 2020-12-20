@@ -9795,7 +9795,7 @@ readers do not read off random characters that represent icons */
 .slick-slider .slick-arrow {
   background-color: #999999;
   border-radius: 500px;
-  font-size: 15px;
+  font-size: 0;
   height: 30px;
   line-height: 0;
   min-width: auto;
@@ -11970,6 +11970,12 @@ body.compensate-for-scrollbar {
   animation-name: slideOutUp;
 }
 
+.crellyslider > .cs-slides > .cs-slide > img {
+  height: auto !important;
+  opacity: 1 !important;
+  width: auto !important;
+}
+
 /*@font-face {
   font-family: 'icomoon';
   src:  url('../fonts/icomoon.eot?foziim');
@@ -12310,12 +12316,12 @@ button:hover {
   color: #f72936;
   font-size: 0.9333333333rem;
   line-height: inherit;
-  padding: 0.4666666667rem 3.3333333333rem 0.4666666667rem 1.3333333333rem !important;
+  padding: 0.4666666667rem 2.6666666667rem 0.4666666667rem 1.3333333333rem !important;
 }
 .single-product-details .summary form.cart .single_add_to_cart_button:before, .woocommerce a.add_to_cart_button:before {
   font-size: 1.3333333333rem;
   position: absolute;
-  right: 1.3333333333rem;
+  right: 1rem;
 }
 @media (max-width: 480px) {
   .single-product-details .summary form.cart .single_add_to_cart_button, .woocommerce a.add_to_cart_button {
@@ -12482,6 +12488,9 @@ button:hover {
   background-color: #f72936;
   padding: 0rem 0.3333333333rem;
   border-radius: 0.3333333333rem;
+}
+.block-navigation .cart-icon .cart-count.cart-empty {
+  display: none;
 }
 .block-navigation .main-menu {
   font-family: "Roboto Condensed", sans-serif;
@@ -13690,7 +13699,7 @@ main {
 .block-products-tabs .products-list .woocommerce ul.products li.product .add_to_cart_button {
   display: block;
   left: auto;
-  margin: 0rem 1.6666666667rem 1.3333333333rem 1.6666666667rem;
+  margin: 0 5% 1.3333333333rem 5%;
   right: auto;
 }
 
@@ -13877,8 +13886,47 @@ main {
   padding: 0;
 }
 
+#comment,
 #comments {
   margin-bottom: 3.3333333333rem;
+}
+
+#comment .comment-title {
+  font-family: "Roboto Condensed", sans-serif;
+  font-weight: 700;
+  display: block;
+  font-size: 2rem;
+  margin-bottom: 2.6666666667rem;
+}
+#comment .comment {
+  align-items: flex-start;
+  display: flex;
+  margin-bottom: 1.3333333333rem;
+  position: relative;
+}
+#comment .comment-author-picture {
+  width: 2.1333333333rem;
+}
+#comment .comment-content {
+  border-radius: 0.2666666667rem;
+  border: 0.0666666667rem solid #999999;
+  flex: 1;
+  margin: 0rem 0rem 0rem 1.3333333333rem;
+  padding: 0.9333333333rem 0.9333333333rem 0rem;
+}
+#comment .comment-header {
+  font-size: 0.8rem;
+  margin-bottom: 0.9333333333rem;
+}
+#comment .comment-author {
+  font-weight: bold;
+  color: #000000;
+}
+#comment .comment-author:hover {
+  color: #f72936;
+}
+#comment .comment-date {
+  color: #333333;
 }
 
 #commentform > p {
@@ -13938,6 +13986,13 @@ main {
   font-size: 1.3333333333rem;
 }
 
+.fb-comments {
+  background-color: #ffffff;
+  border-radius: 0.4666666667rem;
+  display: block !important;
+  padding: 1.3333333333rem 0rem 2.3333333333rem 0rem;
+}
+
 .cover-overflow:after {
   background-color: rgba(0, 0, 0, 0.8);
   bottom: 0;
@@ -13949,13 +14004,6 @@ main {
   top: 0;
   transition: background-color 0.5s ease-in-out;
   width: 100vw;
-}
-
-.fb-comments {
-  background-color: #ffffff;
-  border-radius: 0.4666666667rem;
-  display: block !important;
-  padding: 1.3333333333rem 0rem 2.3333333333rem 0rem;
 }
 
 .page-template-default .content-editor-wrapper + [class*=block-] {

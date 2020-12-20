@@ -1,0 +1,11 @@
+.crellyslider {
+  > .cs-slides {
+    > .cs-slide {
+      > img {
+        height: auto !important;
+        opacity: 1 !important;
+        width: auto !important;
+      }
+    }
+  }
+}

@@ -91,6 +91,10 @@
       background-color: $color-link;
       padding: rem(0 5px);
       border-radius: rem(5px);
+
+      &.cart-empty {
+        display: none;
+      }
     }
   }
 

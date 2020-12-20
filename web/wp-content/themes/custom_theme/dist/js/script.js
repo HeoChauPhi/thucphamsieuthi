@@ -273,6 +273,12 @@
    * Loading Jquery
    *
    ================================================================== */
+
+  $(window).scroll(function() {
+    backToTopShow();
+    $('.news-slide .slide-item .archive-item-inner').matchHeight({property: 'height'});
+  });
+
   $(document).ready(function() {
     //console.log(PythagorasEquirectangular(20.999591499999998, 105.8404626, 21.6074228, 105.8395769));
 
@@ -345,9 +351,9 @@
       draggable: false
     });
 
-    $('.news-slide .slide-item .archive-item-inner').matchHeight({property: 'min-height'});
     $('.blog-posts .archive-list .archive-item-inner .post-title').matchHeight({property: 'min-height'});
     $('.blog-posts .archive-list .archive-item-inner .post-excerpt').matchHeight({property: 'min-height'});
+    $('.archive-product-list .archive-product-item .product-item-inner .product-title').matchHeight({property: 'min-height'});
     $('.block-products-tabs .tab-content').each(function( index ) {
       $(this).find('li.product a.woocommerce-loop-product__link').matchHeight({property: 'min-height'});
     });
@@ -382,11 +388,11 @@
         url : themeAjax.ajaxurl,
         data : {
           action: "notice_add_to_cart",
-          product_id: this_button['context']['dataset']['product_id']
+          product_id: $(this_button[0]).data('product_id')
         },
         beforeSend: function() {},
         success: function(response) {
-          $('.block-navigation .cart-icon .cart-count').text(parseInt($cart_count) + 1);
+          $('.block-navigation .cart-icon .cart-count').removeClass('cart-empty').text(parseInt($cart_count) + 1);
 
           $('.page-wrapper').append('<div id="notice-add-to-cart" class="woocommerce-message">' + response.markup + '</div>');
 
@@ -400,7 +406,7 @@
       });
     });
 
-    $( 'body' ).on( 'updated_cart_totals', function(){
+    $( document.body ).on( 'updated_wc_div', function(){
       $.ajax({
         type : "post",
         dataType : "json",
@@ -411,16 +417,15 @@
         beforeSend: function() {},
         success: function(response) {
           $('.block-navigation .cart-icon .cart-count').text(response.markup);
+          if (parseInt(response.markup) == 0) {
+            $('.block-navigation .cart-icon .cart-count').addClass('cart-empty');
+          }
         },
         error: function(response) {
           console.log('error');
         }
       });
     });
-  });
-
-  $(window).scroll(function() {
-    backToTopShow();
   });
 
   $(window).load(function() {

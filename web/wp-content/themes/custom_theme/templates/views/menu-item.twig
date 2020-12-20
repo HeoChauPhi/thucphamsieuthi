@@ -2,7 +2,7 @@
   <a class="nav-main-link {% if item_class %}{{ item_class }}{% endif %}" href="{{item.get_link}}">
     {{item.title}}
     {% if fn('in_array', 'cart-icon', item.classes) %}
-      <span class="cart-count">{{ fn('WC').cart.get_cart_contents_count }}</span>
+      <span class="cart-count {% if fn('WC').cart.get_cart_contents_count == 0 %}cart-empty{% endif %}">{{ fn('WC').cart.get_cart_contents_count }}</span>
     {% endif %}
   </a>
   {% if item.get_children %}
