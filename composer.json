@@ -64,7 +64,7 @@
     "wpackagist-plugin/stage-file-proxy": "dev-trunk",
     "wpackagist-plugin/codepress-admin-columns": "4.2.5",
     "wpackagist-plugin/woocommerce": "4.8.0",
-    "wpackagist-plugin/content-aware-sidebars": "3.13",
+    "wpackagist-plugin/content-aware-sidebars": "3.14",
     "wpackagist-plugin/widget-css-classes": "1.5.4.1",
     "wpackagist-plugin/advanced-custom-fields-font-awesome": "3.1.1",
     "wpackagist-plugin/mailchimp-for-wp": "4.8.1",

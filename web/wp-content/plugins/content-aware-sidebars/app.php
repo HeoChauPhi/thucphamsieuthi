@@ -3,7 +3,7 @@
  * @package Content Aware Sidebars
  * @author Joachim Jensen <joachim@dev.institute>
  * @license GPLv3
- * @copyright 2019 by Joachim Jensen
+ * @copyright 2020 by Joachim Jensen
  */
 
 defined('ABSPATH') || exit;
@@ -11,7 +11,7 @@ defined('ABSPATH') || exit;
 final class CAS_App
 {
     const PLUGIN_VERSION_KEY = 'cas_db_version';
-    const PLUGIN_VERSION = '3.13';
+    const PLUGIN_VERSION = '3.14';
 
     /**
      * Prefix for sidebar id

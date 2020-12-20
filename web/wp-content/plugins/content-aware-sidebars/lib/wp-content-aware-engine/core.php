@@ -668,12 +668,15 @@ GROUP BY p.post_type, m.meta_key
          */
         public static function add_group_meta_box($post_type, $post)
         {
+            if(is_null($post)) {
+                return;
+            }
             self::render_group_meta_box($post, $post_type, 'normal', 'default');
         }
 
         public static function render_group_meta_box($post, $screen, $context = 'normal', $priority = 'default')
         {
-            if (!self::types()->has($post->post_type)) {
+            if (is_null($post) || !self::types()->has($post->post_type)) {
                 return;
             }
 
@@ -882,7 +885,7 @@ GROUP BY p.post_type, m.meta_key
             );
 
             if (self::types()->has($current_screen->post_type) && $current_screen->base == 'post') {
-                self::enqueue_scripts_styles($hook);
+                self::enqueue_scripts_styles($current_screen->post_type);
             }
         }
 
@@ -909,9 +912,9 @@ GROUP BY p.post_type, m.meta_key
          * @param   string    $hook
          * @return  void
          */
-        public static function enqueue_scripts_styles($hook)
+        public static function enqueue_scripts_styles($post_type = '')
         {
-            $post_type = get_post_type();
+            $post_type = empty($post_type) ? get_post_type() : $post_type;
 
             $group_meta = self::get_condition_meta_keys($post_type);
 

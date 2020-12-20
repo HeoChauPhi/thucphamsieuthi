@@ -135,7 +135,7 @@ class WPCAModule_post_type extends WPCAModule_Base
                 ))
             ));
         } else {
-            if (is_post_type_hierarchical($args['post_type']) && !$args['post__in']) {
+            if (is_post_type_hierarchical($args['post_type']) && !isset($args['post__in'])) {
                 $args['posts_per_page'] = -1;
                 $args['paged'] = 0;
                 $args['orderby'] = 'menu_order title';
@@ -328,7 +328,7 @@ class WPCAModule_post_type extends WPCAModule_Base
         }
 
         $post_status = array('publish','private','future','draft');
-        if ($post_status == 'attachment') {
+        if ($post_type_name == 'attachment') {
             $post_status = array('inherit');
         }
 
@@ -503,7 +503,7 @@ class WPCAModule_post_type extends WPCAModule_Base
                     // Get sidebars with post ancestor wanting to auto-select post
                     $query = new WP_Query(array(
                         'post_type'   => WPCACore::TYPE_CONDITION_GROUP,
-                        'post_status' => array('wpca_or','wpca_and','publish'),
+                        'post_status' => array(WPCACore::STATUS_OR,WPCACore::STATUS_EXCEPT,WPCACore::STATUS_PUBLISHED),
                         'meta_query'  => array(
                         'relation' => 'AND',
                             array(
