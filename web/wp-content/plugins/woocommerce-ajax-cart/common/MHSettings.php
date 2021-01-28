@@ -108,7 +108,14 @@ if ( !class_exists('MHSettings') ) {
         }
     
         public function admin_url() {
-            $page = !empty($_REQUEST['page']) ? sanitize_text_field($_REQUEST['page']) : $this->pluginAlias;
+            if ( !empty($_REQUEST['page']) ) {
+                $page = sanitize_text_field($_REQUEST['page']);
+            }
+            
+            else {
+                $page = apply_filters("mh_{$this->pluginAbbrev}_menu_slug", $this->pluginAlias);
+            }
+
             return admin_url('admin.php?page=' . $page);
         }
         
@@ -132,7 +139,7 @@ if ( !class_exists('MHSettings') ) {
         }
     
         public function active_tab() {
-            $tab = basename(sanitize_file_name( isset($_GET['tab']) ? $_GET['tab'] : null ));
+            $tab = basename(sanitize_file_name( isset($_GET['tab']) ? sanitize_text_field($_GET['tab']) : null ));
     
             if ( preg_match('/^tab-(.*)$/', $tab) ) {
                 return $tab;

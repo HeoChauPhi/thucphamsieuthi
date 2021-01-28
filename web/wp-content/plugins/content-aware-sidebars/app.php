@@ -11,7 +11,7 @@ defined('ABSPATH') || exit;
 final class CAS_App
 {
     const PLUGIN_VERSION_KEY = 'cas_db_version';
-    const PLUGIN_VERSION = '3.14';
+    const PLUGIN_VERSION = '3.14.1';
 
     /**
      * Prefix for sidebar id
@@ -148,6 +148,11 @@ final class CAS_App
                 99,
                 4
             );
+            /**
+             * gutenberg disables widgets screen without user consent,
+             * reenable by popular demand for now
+             */
+            add_filter('gutenberg_use_widgets_block_editor','__return_false');
         }
     }
 

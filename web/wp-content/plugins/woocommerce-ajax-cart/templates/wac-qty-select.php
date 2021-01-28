@@ -16,17 +16,26 @@
  */
 
 defined( 'ABSPATH' ) || exit;
+$min_value = isset($min_value) ? $min_value : 0;
+$step = isset($step) ? $step : 1;
 ?>
 <div class="quantity">
     <select name="<?php echo esc_attr( $input_name ); ?>"
             title="<?php echo esc_attr_x( 'Qty', 'Product quantity input tooltip', 'woocommerce' ) ?>"
             class="input-text qty text"
             max="<?php echo wac_option('select_items'); ?>">
-        <?php for ( $i=0; $i <= wac_option('select_items') && ( empty($max_value) || $i <= $max_value ); $i++ ): ?>
-            <option <?php if ( esc_attr( $input_value ) == $i ): ?>selected="selected"<?php endif; ?>
-                    value="<?php echo $i; ?>">
-                <?php echo $i; ?>
-            </option>
-        <?php endfor; ?>
+        <?php if ( !empty($dropdown_steps) ): ?>
+            <?php foreach ( $dropdown_steps as $step ): ?>
+                <option <?php if ( esc_attr( $input_value ) == $step ): ?>selected="selected"<?php endif; ?> value="<?php echo $step; ?>">
+                    <?php echo $step; ?>
+                </option>
+            <?php endforeach; ?>
+        <?php else: ?>
+            <?php for ( $i = $min_value; $i <= wac_option('select_items') && ( empty($max_value) || $i <= $max_value ); $i += $step ): ?>
+                <option <?php if ( esc_attr( $input_value ) == $i ): ?>selected="selected"<?php endif; ?> value="<?php echo $i; ?>">
+                    <?php echo $i; ?>
+                </option>
+            <?php endfor; ?>
+        <?php endif; ?>
     </select>
 </div>

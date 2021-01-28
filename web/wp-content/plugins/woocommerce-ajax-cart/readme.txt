@@ -3,7 +3,7 @@ Contributors: moiseh
 Tags: woocommerce, ajax, cart, shipping
 Requires at least: 4.2
 Tested up to: 5.5.1
-Stable tag: 1.3.17
+Stable tag: 1.3.19
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -43,6 +43,15 @@ If you looking for a related plugin with more complete features maybe you can tr
 1. When user clicks on "+" or "-" of Quantity field, an AJAX request was made to update the prices.
 
 == Changelog ==
+
+= 1.3.19 =
+* Added dropdown_steps argument support for woocommerce_quantity_input_args hook
+
+= 1.3.18 =
+* Fixed fatal error on frontend when WooCommerce plugin not enabled
+* Let dropdown respect min_value and step values
+* Added wac_quantity_div and wac_template_file filters
+* Removed old legacy migration
 
 = 1.3.17 =
 * Using document instead document.body listeners that was causing issues with some themes

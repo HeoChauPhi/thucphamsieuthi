@@ -3,7 +3,7 @@
 Plugin Name: WooCommerce AJAX Cart
 Plugin URI: https://wordpress.org/plugins/woocommerce-ajax-cart/
 Description: Change the default behavior of WooCommerce Cart page, making AJAX requests when quantity field changes
-Version: 1.3.17
+Version: 1.3.19
 Author: Moises Heberle
 Author URI: https://pluggablesoft.com/contact/
 Text Domain: woocommerce-ajax-cart
@@ -35,12 +35,7 @@ if ( !function_exists('wac_init') ) {
             WAC_BASE_FILE,
             __('WooCommerce Ajax Cart', 'woocommerce-ajax-cart')
         );
-    
-        // run legacy migrations
-        if ( get_option('wac_show_qty_buttons') ) {
-            wac_run_migration_01();
-        }
-    
+
         // plugin checks
         if ( !empty($_POST['is_wac_ajax']) && !defined( 'WOOCOMMERCE_CART' ) ) {
             define( 'WOOCOMMERCE_CART', true );
@@ -97,25 +92,16 @@ if ( !function_exists('wac_init') ) {
         return apply_filters('mh_wac_setting_value', $name);
     }
     
-    function wac_run_migration_01() {
-        update_option('wac_settings', array(
-            'show_qty_buttons' => get_option('wac_show_qty_buttons'),
-            'confirmation_zero_qty' => get_option('wac_confirmation_zero_qty'),
-            'qty_as_select' => get_option('wac_qty_as_select'),
-            'select_items' => get_option('wac_select_items'),
-        ));
-        
-        delete_option('wac_show_qty_buttons');
-        delete_option('wac_confirmation_zero_qty');
-        delete_option('wac_qty_as_select');
-        delete_option('wac_select_items');
-    }
-    
     function wac_load_plugin_textdomain() {
         load_plugin_textdomain('woocommerce-ajax-cart', FALSE, basename( dirname(dirname( __FILE__ )) ) . '/languages/' );
     }
 
     function wac_enqueue_scripts() {
+        // check if WooCommerce was enabled
+        if ( !class_exists('WooCommerce') ) {
+            return;
+        }
+
         $deps = array('jquery');
 
         if ( is_cart() ) {
@@ -157,7 +143,7 @@ if ( !function_exists('wac_init') ) {
         $input = str_replace(array('<div class="quantity">', '</div>'), array('', ''), $inputDiv);
         $newDiv = '<div class="quantity wac-quantity">' . $minus . $input . $plus . '</div>';
     
-        return $newDiv;
+        return apply_filters('wac_quantity_div', $newDiv);
     };
     
     function wac_button_link($label, $identifier) {
@@ -185,6 +171,6 @@ if ( !function_exists('wac_init') ) {
             }
         }
     
-        return $located;
+        return apply_filters('wac_template_file', $located, $template_name, $args);
     }
 }
