@@ -276,7 +276,6 @@
 
   $(window).scroll(function() {
     backToTopShow();
-    $('.news-slide .slide-item .archive-item-inner').matchHeight({property: 'height'});
   });
 
   $(document).ready(function() {
@@ -288,6 +287,7 @@
     //$('.js-back-top').on('click', backToTop);
     $('.js-scroll-down').on('click', scrollDown);
 
+    $('.news-slide .slide-item .archive-item-inner').matchHeight({property: 'min-height'});
     $('.news-slide').slick({
       autoplay: true,
       autoplaySpeed: 3000,
@@ -319,6 +319,12 @@
         // settings: "unslick"
         // instead of a settings object
       ]
+    }).on('init', function (event, slick) {
+      //console.log(slick);
+      $('.news-slide .slide-item .archive-item-inner').matchHeight({property: 'min-height'});
+    }).on('beforeChange', function (event, slick, currentSlide, nextSlide) {
+      //console.log(slick);
+      $('.news-slide .slide-item .archive-item-inner').matchHeight({property: 'min-height'});
     });
 
     $('.hot-news-list').slick({

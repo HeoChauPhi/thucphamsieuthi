@@ -2,11 +2,11 @@
   padding: rem(22px 0 30px);
 
   .news-slide {
-    display: none;
+    display: flex;
     overflow: hidden;
 
     &.slick-slider {
-      display: block;
+      display: flex;
     }
 
     .slick-list {
