@@ -14103,6 +14103,15 @@ main {
   line-height: 1.4666666667rem;
 }
 
+.main-content .post-title {
+  font-size: 2rem;
+}
+@media (max-width: 480px) {
+  .main-content .post-title {
+    font-size: 1.8666666667rem;
+  }
+}
+
 .post-actions,
 .post-tags,
 .post-tags-list,
