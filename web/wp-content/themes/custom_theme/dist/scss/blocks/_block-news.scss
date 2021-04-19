@@ -10,14 +10,14 @@
     }
 
     .slick-list {
-      margin-left: rem(-10px);
-      margin-right: rem(-10px);
+      width: 100%;
     }
 
     &.archive-list {
       .slide-item {
         clear: none;
         margin: rem(0 10px 40px 10px);
+        width: 25%;
       }
     }
   }

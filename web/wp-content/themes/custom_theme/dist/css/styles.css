@@ -13728,12 +13728,12 @@ main {
   display: flex;
 }
 .block-news .news-slide .slick-list {
-  margin-left: -0.6666666667rem;
-  margin-right: -0.6666666667rem;
+  width: 100%;
 }
 .block-news .news-slide.archive-list .slide-item {
   clear: none;
   margin: 0rem 0.6666666667rem 2.6666666667rem 0.6666666667rem;
+  width: 25%;
 }
 
 .block-stores-system {
